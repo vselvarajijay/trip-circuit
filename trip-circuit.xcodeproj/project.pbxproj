@@ -14,6 +14,9 @@
 		0D58AE301C63BF42002F984F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D58AE2E1C63BF42002F984F /* LaunchScreen.storyboard */; };
 		0D58AE3B1C63BF42002F984F /* trip_circuitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D58AE3A1C63BF42002F984F /* trip_circuitTests.swift */; };
 		0D58AE461C63BF42002F984F /* trip_circuitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D58AE451C63BF42002F984F /* trip_circuitUITests.swift */; };
+		0D58AE551C63C15F002F984F /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D58AE541C63C15F002F984F /* Bridge.m */; };
+		0D58AE571C63D8E1002F984F /* LocationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D58AE561C63D8E1002F984F /* LocationItem.swift */; };
+		679F1E76AC89F82E7892FAE4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2066B1D903C5F3D557BE66B9 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,12 @@
 		0D58AE411C63BF42002F984F /* trip-circuitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "trip-circuitUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D58AE451C63BF42002F984F /* trip_circuitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trip_circuitUITests.swift; sourceTree = "<group>"; };
 		0D58AE471C63BF42002F984F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D58AE531C63C15E002F984F /* trip-circuit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "trip-circuit-Bridging-Header.h"; sourceTree = "<group>"; };
+		0D58AE541C63C15F002F984F /* Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
+		0D58AE561C63D8E1002F984F /* LocationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationItem.swift; sourceTree = "<group>"; };
+		2066B1D903C5F3D557BE66B9 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62B6E99F16021BF45CDF1EB6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E6DC7B158FED5B453673E1A0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				679F1E76AC89F82E7892FAE4 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		054C31C483F33917A087AD0B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				62B6E99F16021BF45CDF1EB6 /* Pods.debug.xcconfig */,
+				E6DC7B158FED5B453673E1A0 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		0D58AE191C63BF42002F984F = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +100,8 @@
 				0D58AE391C63BF42002F984F /* trip-circuitTests */,
 				0D58AE441C63BF42002F984F /* trip-circuitUITests */,
 				0D58AE231C63BF42002F984F /* Products */,
+				054C31C483F33917A087AD0B /* Pods */,
+				A9461AFE75AD41B38D79AF94 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +124,9 @@
 				0D58AE2C1C63BF42002F984F /* Assets.xcassets */,
 				0D58AE2E1C63BF42002F984F /* LaunchScreen.storyboard */,
 				0D58AE311C63BF42002F984F /* Info.plist */,
+				0D58AE541C63C15F002F984F /* Bridge.m */,
+				0D58AE531C63C15E002F984F /* trip-circuit-Bridging-Header.h */,
+				0D58AE561C63D8E1002F984F /* LocationItem.swift */,
 			);
 			path = "trip-circuit";
 			sourceTree = "<group>";
@@ -125,6 +149,14 @@
 			path = "trip-circuitUITests";
 			sourceTree = "<group>";
 		};
+		A9461AFE75AD41B38D79AF94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2066B1D903C5F3D557BE66B9 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +164,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D58AE4A1C63BF42002F984F /* Build configuration list for PBXNativeTarget "trip-circuit" */;
 			buildPhases = (
+				5E920D2D44A4F10C5C31F65B /* Check Pods Manifest.lock */,
 				0D58AE1E1C63BF42002F984F /* Sources */,
 				0D58AE1F1C63BF42002F984F /* Frameworks */,
 				0D58AE201C63BF42002F984F /* Resources */,
+				4680FBAA8D35CCBEA0F19703 /* Embed Pods Frameworks */,
+				97A7F74E105D548CD9B8C388 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -193,6 +228,11 @@
 				TargetAttributes = {
 					0D58AE211C63BF42002F984F = {
 						CreatedOnToolsVersion = 7.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					0D58AE351C63BF42002F984F = {
 						CreatedOnToolsVersion = 7.2;
@@ -251,12 +291,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4680FBAA8D35CCBEA0F19703 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E920D2D44A4F10C5C31F65B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		97A7F74E105D548CD9B8C388 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0D58AE1E1C63BF42002F984F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0D58AE281C63BF42002F984F /* ViewController.swift in Sources */,
+				0D58AE571C63D8E1002F984F /* LocationItem.swift in Sources */,
+				0D58AE551C63C15F002F984F /* Bridge.m in Sources */,
 				0D58AE261C63BF42002F984F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,23 +485,30 @@
 		};
 		0D58AE4B1C63BF42002F984F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62B6E99F16021BF45CDF1EB6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "trip-circuit/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "isc.trip-circuit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "trip-circuit/trip-circuit-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		0D58AE4C1C63BF42002F984F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6DC7B158FED5B453673E1A0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "trip-circuit/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "isc.trip-circuit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "trip-circuit/trip-circuit-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -482,6 +579,7 @@
 				0D58AE4C1C63BF42002F984F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D58AE4D1C63BF42002F984F /* Build configuration list for PBXNativeTarget "trip-circuitTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +588,7 @@
 				0D58AE4F1C63BF42002F984F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0D58AE501C63BF42002F984F /* Build configuration list for PBXNativeTarget "trip-circuitUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +597,7 @@
 				0D58AE521C63BF42002F984F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
