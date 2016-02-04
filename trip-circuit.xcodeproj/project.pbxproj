@@ -16,6 +16,8 @@
 		0D58AE461C63BF42002F984F /* trip_circuitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D58AE451C63BF42002F984F /* trip_circuitUITests.swift */; };
 		0D58AE551C63C15F002F984F /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D58AE541C63C15F002F984F /* Bridge.m */; };
 		0D58AE571C63D8E1002F984F /* LocationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D58AE561C63D8E1002F984F /* LocationItem.swift */; };
+		0D58AE591C63F097002F984F /* TCTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D58AE581C63F097002F984F /* TCTableCell.xib */; };
+		0D58AE5B1C63F0C0002F984F /* TCIntroScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D58AE5A1C63F0C0002F984F /* TCIntroScreen.xib */; };
 		679F1E76AC89F82E7892FAE4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2066B1D903C5F3D557BE66B9 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		0D58AE531C63C15E002F984F /* trip-circuit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "trip-circuit-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D58AE541C63C15F002F984F /* Bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
 		0D58AE561C63D8E1002F984F /* LocationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationItem.swift; sourceTree = "<group>"; };
+		0D58AE581C63F097002F984F /* TCTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TCTableCell.xib; sourceTree = "<group>"; };
+		0D58AE5A1C63F0C0002F984F /* TCIntroScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TCIntroScreen.xib; sourceTree = "<group>"; };
 		2066B1D903C5F3D557BE66B9 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B6E99F16021BF45CDF1EB6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E6DC7B158FED5B453673E1A0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				0D58AE541C63C15F002F984F /* Bridge.m */,
 				0D58AE531C63C15E002F984F /* trip-circuit-Bridging-Header.h */,
 				0D58AE561C63D8E1002F984F /* LocationItem.swift */,
+				0D58AE581C63F097002F984F /* TCTableCell.xib */,
+				0D58AE5A1C63F0C0002F984F /* TCIntroScreen.xib */,
 			);
 			path = "trip-circuit";
 			sourceTree = "<group>";
@@ -272,6 +278,8 @@
 				0D58AE301C63BF42002F984F /* LaunchScreen.storyboard in Resources */,
 				0D58AE2D1C63BF42002F984F /* Assets.xcassets in Resources */,
 				0D58AE2B1C63BF42002F984F /* Main.storyboard in Resources */,
+				0D58AE591C63F097002F984F /* TCTableCell.xib in Resources */,
+				0D58AE5B1C63F0C0002F984F /* TCIntroScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
