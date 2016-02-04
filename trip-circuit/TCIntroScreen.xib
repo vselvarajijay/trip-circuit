@@ -15,19 +15,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFC-CT-K4N">
-                        <rect key="frame" x="189" y="498" width="221" height="42"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFC-CT-K4N">
+                        <rect key="frame" x="0.0" y="507" width="600" height="42"/>
                         <state key="normal" image="btn_enable_location.png"/>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="intro.png" translatesAutoresizingMaskIntoConstraints="NO" id="bsz-2C-zJE">
+                        <rect key="frame" x="40" y="175" width="520" height="280"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Know how much time you spend shopping." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTV-6E-BSE">
                         <rect key="frame" x="136" y="58" width="328" height="100"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="intro.png" translatesAutoresizingMaskIntoConstraints="NO" id="bsz-2C-zJE">
-                        <rect key="frame" x="40" y="172" width="520" height="280"/>
-                    </imageView>
                 </subviews>
                 <color key="backgroundColor" red="0.14509803921568626" green="0.18823529411764706" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
             </view>
@@ -37,6 +37,6 @@
     </objects>
     <resources>
         <image name="btn_enable_location.png" width="221" height="42"/>
-        <image name="intro.png" width="301" height="265"/>
+        <image name="intro.png" width="300" height="300"/>
     </resources>
 </document>
