@@ -34,13 +34,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
    
     // {'venue':{'visits':1, 'total_duration':1}}
     
+    
+    var lastPlaceVisited = ""
+    
     let locationManager = LKLocationManager()
     
     
     @IBOutlet weak var totalTimeLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var currenltyAtLbl: UILabel!
     
     
+    
+
     func timeFormatted(totalSeconds: Int) -> String {
         let seconds: Int = totalSeconds % 60
         let minutes: Int = (totalSeconds / 60) % 60
@@ -66,6 +72,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //        let visitFilter = LKVisitFilter(venueCategory: "Grocery")
         //        self.locationManager.startMonitoringVisitsWithFilter(visitFilter)
         self.locationManager.startMonitoringVisits()
+        
+        
+        self.currenltyAtLbl.hidden = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -81,7 +90,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("customCell", forIndexPath: indexPath) as! TCTableCell
         
-        let venue = Array(self.visitsDict.keys)[indexPath.row]
+        
+        var sortedKeys = Array(self.visitsDict.keys).sort {
+            let obj1 = self.visitsDict[$0]!["total_time"] // get ob associated w/ key 1
+            let obj2 = self.visitsDict[$1]!["total_time"] // get ob associated w/ key 2
+            return obj1 > obj2
+        }
+        
+        //let venue = Array(self.visitsDict.keys)[indexPath.row]
+        let venue = sortedKeys[indexPath.row]
         let num_visits = String(self.visitsDict[venue]!["visits"]!)
         let total_time = self.timeFormatted(self.visitsDict[venue]!["total_time"]!)
         
@@ -108,6 +125,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         self.locationManager.requestPlace { (place: LKPlacemark?, error: NSError?) -> Void in
+            self.currenltyAtLbl.hidden = false
             if let place = place {
                 print("Welcome to \(place.name)")
                 
@@ -127,8 +145,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     self.visitsDict[place.name!]!["visits"] = 0
                     self.visitsDict[place.name!]!["total_time"] = 0
                 }
-                self.visitsDict[place.name!]!["visits"] = self.visitsDict[place.name!]!["visits"]! + 1
+                
+                
                 self.visitsDict[place.name!]!["total_time"] = self.visitsDict[place.name!]!["total_time"]! + 1
+                
+                if self.lastPlaceVisited != place.name! {
+                    self.visitsDict[place.name!]!["visits"] = self.visitsDict[place.name!]!["visits"]! + 1
+                }
+                
+                self.lastPlaceVisited = place.name!
+                
+                self.currenltyAtLbl.text = "Currently at: \(place.name!)"
                 
             } else if error != nil {
                 print("Uh oh, got an error: \(error)")
@@ -139,6 +166,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         self.totalTimeLbl.text = self.totalTime()
+        
+    
 
         self.tableView.reloadData()
         self.tableView.reloadInputViews()
@@ -177,6 +206,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let locationItem = LocationItem(visit: visit)
         
+            
         let localNotification = UILocalNotification()
         localNotification.alertBody = "Visit ended at \(locationItem.title)"
         localNotification.timeZone = NSTimeZone.localTimeZone()
