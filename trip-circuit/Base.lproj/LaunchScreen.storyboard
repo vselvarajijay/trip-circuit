@@ -8,7 +8,68 @@
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController"/>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dZX-Oy-WZI"/>
+                        <viewControllerLayoutGuide type="bottom" id="bs9-HI-WBF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mkp-dU-9cP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro-img" translatesAutoresizingMaskIntoConstraints="NO" id="nEk-ex-J6r">
+                                <rect key="frame" x="40" y="136" width="520" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="520" id="31l-xm-ZXt"/>
+                                    <constraint firstAttribute="height" constant="280" id="YoK-3y-Voj"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Know how much time you spend shopping." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqZ-Yw-lqu">
+                                <rect key="frame" x="136" y="28" width="328" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="KwS-eW-9Pn"/>
+                                    <constraint firstAttribute="width" constant="328" id="MRe-kO-Hv4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2k-qv-b8h">
+                                <rect key="frame" x="209" y="465" width="183" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="5F1-34-snt"/>
+                                    <constraint firstAttribute="height" constant="55" id="7pi-BS-0yi"/>
+                                    <constraint firstAttribute="width" constant="183" id="A4p-Q7-VTF"/>
+                                    <constraint firstAttribute="height" constant="42" id="vyx-0I-iJf"/>
+                                </constraints>
+                                <state key="normal" image="btn-enable-location"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5F1-34-snt"/>
+                                        <exclude reference="vyx-0I-iJf"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.098039215690000001" green="0.12941176469999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="nEk-ex-J6r" firstAttribute="centerX" secondItem="Mkp-dU-9cP" secondAttribute="centerX" id="8N0-Qv-Tzn"/>
+                            <constraint firstItem="eqZ-Yw-lqu" firstAttribute="centerX" secondItem="Mkp-dU-9cP" secondAttribute="centerX" id="9gj-Ym-l1d"/>
+                            <constraint firstItem="m2k-qv-b8h" firstAttribute="top" secondItem="nEk-ex-J6r" secondAttribute="bottom" constant="49" id="ADI-GV-V1o"/>
+                            <constraint firstItem="m2k-qv-b8h" firstAttribute="top" secondItem="nEk-ex-J6r" secondAttribute="bottom" constant="53" id="D48-Fz-v9O"/>
+                            <constraint firstItem="m2k-qv-b8h" firstAttribute="centerX" secondItem="Mkp-dU-9cP" secondAttribute="centerX" id="gCp-RC-p4c"/>
+                            <constraint firstItem="nEk-ex-J6r" firstAttribute="top" secondItem="eqZ-Yw-lqu" secondAttribute="bottom" constant="8" id="jR2-Gl-SfY"/>
+                            <constraint firstItem="eqZ-Yw-lqu" firstAttribute="top" secondItem="dZX-Oy-WZI" secondAttribute="bottom" constant="8" id="rrE-GS-Aco"/>
+                            <constraint firstItem="m2k-qv-b8h" firstAttribute="centerX" secondItem="Mkp-dU-9cP" secondAttribute="centerX" id="sHS-bS-gzL"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="D48-Fz-v9O"/>
+                                <exclude reference="sHS-bS-gzL"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="lW4-he-fNA">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -35,7 +96,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn-enable-location" width="221" height="42"/>
         <image name="btn_enable_location.png" width="221" height="42"/>
-        <image name="intro.png" width="221" height="42"/>
+        <image name="intro-img" width="300" height="300"/>
+        <image name="intro.png" width="300" height="300"/>
     </resources>
 </document>
