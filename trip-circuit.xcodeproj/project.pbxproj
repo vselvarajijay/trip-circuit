@@ -19,6 +19,7 @@
 		0D58AE591C63F097002F984F /* TCTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D58AE581C63F097002F984F /* TCTableCell.xib */; };
 		0D58AE5B1C63F0C0002F984F /* TCIntroScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D58AE5A1C63F0C0002F984F /* TCIntroScreen.xib */; };
 		0D58AE5E1C63F477002F984F /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D58AE5D1C63F477002F984F /* Venue.swift */; };
+		0DE174021C642AE9005D6C20 /* TCTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE174011C642AE9005D6C20 /* TCTableCell.swift */; };
 		679F1E76AC89F82E7892FAE4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2066B1D903C5F3D557BE66B9 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		0D58AE581C63F097002F984F /* TCTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TCTableCell.xib; sourceTree = "<group>"; };
 		0D58AE5A1C63F0C0002F984F /* TCIntroScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TCIntroScreen.xib; sourceTree = "<group>"; };
 		0D58AE5D1C63F477002F984F /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		0DE174011C642AE9005D6C20 /* TCTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCTableCell.swift; sourceTree = "<group>"; };
 		2066B1D903C5F3D557BE66B9 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B6E99F16021BF45CDF1EB6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E6DC7B158FED5B453673E1A0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				0D58AE561C63D8E1002F984F /* LocationItem.swift */,
 				0D58AE581C63F097002F984F /* TCTableCell.xib */,
 				0D58AE5A1C63F0C0002F984F /* TCIntroScreen.xib */,
+				0DE174011C642AE9005D6C20 /* TCTableCell.swift */,
 			);
 			path = "trip-circuit";
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				0D58AE281C63BF42002F984F /* ViewController.swift in Sources */,
 				0D58AE5E1C63F477002F984F /* Venue.swift in Sources */,
 				0D58AE571C63D8E1002F984F /* LocationItem.swift in Sources */,
+				0DE174021C642AE9005D6C20 /* TCTableCell.swift in Sources */,
 				0D58AE551C63C15F002F984F /* Bridge.m in Sources */,
 				0D58AE261C63BF42002F984F /* AppDelegate.swift in Sources */,
 			);

@@ -10,14 +10,26 @@ import UIKit
 import LocationKit
 
 
-
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, LKLocationManagerDelegate {
-    var visitsDict:NSMutableDictionary?
     var visits: [LKPlacemark] = []
+    var visitsDict:[String:[String:Int]] = [
+                    "Safeway" : ["visits":1, "total_time":2],
+                    "Safeway1" : ["visits":1, "total_time":2],
+                    "Safeway2" : ["visits":1, "total_time":2],
+                    "Safeway3" : ["visits":1, "total_time":2],
+                    "Safeway4" : ["visits":1, "total_time":2],
+                    "Safeway5" : ["visits":1, "total_time":2],
+                    "Safeway6" : ["visits":1, "total_time":2],
+                    "Safeway7" : ["visits":1, "total_time":2],
+                    "Safeway8" : ["visits":1, "total_time":2],
+                    "Safeway9" : ["visits":1, "total_time":2],
+                    "Safeway10" : ["visits":1, "total_time":2],
+                    "Safeway11" : ["visits":1, "total_time":2],
+                    "Safeway12" : ["visits":1, "total_time":2],
+                    "Safeway13" : ["visits":1, "total_time":2]
+                ]
    
     // {'venue':{'visits':1, 'total_duration':1}}
-    
-    
     
     let locationManager = LKLocationManager()
     
@@ -32,12 +44,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //        let visitFilter = LKVisitFilter(venueCategory: "Grocery")
         //        self.locationManager.startMonitoringVisitsWithFilter(visitFilter)
         self.locationManager.startMonitoringVisits()
-
-        
-        
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,22 +53,33 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return visits.count
+        return Array(self.visitsDict.keys).count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("customCell", forIndexPath: indexPath) as! TCTableCell
         
-        let cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+        let venue = Array(self.visitsDict.keys)[indexPath.row]
+        let num_visits = String(self.visitsDict[venue]!["visits"]!)
+        let total_time = String(self.visitsDict[venue]!["total_time"]!)
         
         
-        cell.textLabel?.text = (self.visitsDict?.allKeys as! [String])[indexPath.row]
-        
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        cell.configure(venue, numVisitsTxt: num_visits, totalTimeTxt: total_time)
         return cell
     }
+    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }
+    
+    
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100;
+    }
+
     
     func locationManager(manager: LKLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -79,15 +96,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
                 
                 self.visits.append(place)
+               
                 
-                let placeExists = self.visitsDict![place.name!] != nil
+                let placeExists = self.visitsDict[place.name!] != nil
 
                 if !placeExists {
-                    self.visitsDict![place.name!] = NSMutableDictionary()
+                    self.visitsDict[place.name!] = [String:Int]()
                 }
                 
-                self.visitsDict![place.name!]?.setValue(1, forKey: "visits")
-                self.visitsDict![place.name!]?.setValue(1, forKey: "total_time")
+                self.visitsDict[place.name!]!["visits"] = 1
+                self.visitsDict[place.name!]!["total_time"] = 1
                 
                 
                 
