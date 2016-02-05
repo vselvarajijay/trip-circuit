@@ -21,6 +21,8 @@
 		0D58AE5E1C63F477002F984F /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D58AE5D1C63F477002F984F /* Venue.swift */; };
 		0DE174021C642AE9005D6C20 /* TCTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE174011C642AE9005D6C20 /* TCTableCell.swift */; };
 		679F1E76AC89F82E7892FAE4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2066B1D903C5F3D557BE66B9 /* Pods.framework */; };
+		90FE94C21C652BC000AD94AD /* intro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90FE94C01C652BC000AD94AD /* intro@2x.png */; };
+		90FE94C31C652BC000AD94AD /* btn_enable_location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90FE94C11C652BC000AD94AD /* btn_enable_location@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		0DE174011C642AE9005D6C20 /* TCTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCTableCell.swift; sourceTree = "<group>"; };
 		2066B1D903C5F3D557BE66B9 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B6E99F16021BF45CDF1EB6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		90FE94C01C652BC000AD94AD /* intro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "intro@2x.png"; path = "Assets.xcassets/intro@2x.png"; sourceTree = "<group>"; };
+		90FE94C11C652BC000AD94AD /* btn_enable_location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_enable_location@2x.png"; path = "Assets.xcassets/btn_enable_location@2x.png"; sourceTree = "<group>"; };
 		E6DC7B158FED5B453673E1A0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +133,8 @@
 			children = (
 				0D58AE251C63BF42002F984F /* AppDelegate.swift */,
 				0D58AE271C63BF42002F984F /* ViewController.swift */,
+				90FE94C01C652BC000AD94AD /* intro@2x.png */,
+				90FE94C11C652BC000AD94AD /* btn_enable_location@2x.png */,
 				0D58AE291C63BF42002F984F /* Main.storyboard */,
 				0D58AE2C1C63BF42002F984F /* Assets.xcassets */,
 				0D58AE2E1C63BF42002F984F /* LaunchScreen.storyboard */,
@@ -293,6 +299,8 @@
 				0D58AE301C63BF42002F984F /* LaunchScreen.storyboard in Resources */,
 				0D58AE2D1C63BF42002F984F /* Assets.xcassets in Resources */,
 				0D58AE2B1C63BF42002F984F /* Main.storyboard in Resources */,
+				90FE94C31C652BC000AD94AD /* btn_enable_location@2x.png in Resources */,
+				90FE94C21C652BC000AD94AD /* intro@2x.png in Resources */,
 				0D58AE591C63F097002F984F /* TCTableCell.xib in Resources */,
 				0D58AE5B1C63F0C0002F984F /* TCIntroScreen.xib in Resources */,
 			);
