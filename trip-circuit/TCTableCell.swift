@@ -25,6 +25,12 @@ class TCTableCell: UITableViewCell {
         numVisits.text = numVisitsTxt
         totalTime.text = totalTimeTxt
         
+        
+        venueName.sizeToFit()
+        numVisits.sizeToFit()
+        totalTime.sizeToFit()
+
+        
     }
     /*
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {

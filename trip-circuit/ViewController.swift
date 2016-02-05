@@ -12,7 +12,7 @@ import LocationKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, LKLocationManagerDelegate {
     var visits: [LKPlacemark] = []
-    var visitsDict:[String:[String:Int]] = [
+   /* var visitsDict:[String:[String:Int]] = [
                     "Safeway" : ["visits":1, "total_time":2],
                     "Safeway1" : ["visits":1, "total_time":2],
                     "Safeway2" : ["visits":1, "total_time":2],
@@ -28,13 +28,35 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     "Safeway12" : ["visits":1, "total_time":2],
                     "Safeway13" : ["visits":1, "total_time":2]
                 ]
+    */
+    
+    var visitsDict = [String:[String:Int]]()
    
     // {'venue':{'visits':1, 'total_duration':1}}
     
     let locationManager = LKLocationManager()
     
+    
+    @IBOutlet weak var totalTimeLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    
+    func timeFormatted(totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        let minutes: Int = (totalSeconds / 60) % 60
+        let hours: Int = totalSeconds / 3600
+        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+    }
+    
+    func totalTime() -> String {
+        var totalSeconds: Int = 0
+        
+        for vendor in Array(self.visitsDict.keys) {
+            totalSeconds += self.visitsDict[vendor]!["total_time"]!
+        }
+        
+        return timeFormatted(totalSeconds)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +83,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let venue = Array(self.visitsDict.keys)[indexPath.row]
         let num_visits = String(self.visitsDict[venue]!["visits"]!)
-        let total_time = String(self.visitsDict[venue]!["total_time"]!)
+        let total_time = self.timeFormatted(self.visitsDict[venue]!["total_time"]!)
         
         
         cell.selectionStyle = UITableViewCellSelectionStyle.None
@@ -102,12 +124,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
                 if !placeExists {
                     self.visitsDict[place.name!] = [String:Int]()
+                    self.visitsDict[place.name!]!["visits"] = 0
+                    self.visitsDict[place.name!]!["total_time"] = 0
                 }
-                
-                self.visitsDict[place.name!]!["visits"] = 1
-                self.visitsDict[place.name!]!["total_time"] = 1
-                
-                
+                self.visitsDict[place.name!]!["visits"] = self.visitsDict[place.name!]!["visits"]! + 1
+                self.visitsDict[place.name!]!["total_time"] = self.visitsDict[place.name!]!["total_time"]! + 1
                 
             } else if error != nil {
                 print("Uh oh, got an error: \(error)")
@@ -116,6 +137,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
         
+        
+        self.totalTimeLbl.text = self.totalTime()
+
         self.tableView.reloadData()
         self.tableView.reloadInputViews()
         

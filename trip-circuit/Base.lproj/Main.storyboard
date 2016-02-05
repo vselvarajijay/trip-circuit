@@ -124,6 +124,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="CAS-SD-src" id="rpn-jX-cID"/>
+                        <outlet property="totalTimeLbl" destination="XnL-l3-lIz" id="Gr4-Ae-BDt"/>
                         <outlet property="view" destination="8bC-Xf-vdC" id="h2C-nM-gwv"/>
                     </connections>
                 </viewController>
