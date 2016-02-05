@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:infoscout.gpx">
+   </FileRef>
+   <FileRef
+      location = "group:safeway.gpx">
+   </FileRef>
+   <FileRef
       location = "group:trip-circuit.xcodeproj">
    </FileRef>
    <FileRef

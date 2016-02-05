@@ -7,73 +7,24 @@
 //
 
 import UIKit
-import LocationKit
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, LKLocationManagerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let locationManager = LKLocationManager()
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
         // Override point for customization after application launch.
-        
-        
         // The debug flag is not necessary (and should not be enabled in prod)
         // but does help to ensure things are working correctly
-        self.locationManager.debug = true
-        self.locationManager.apiToken = "a0901652d0845189"
-        self.locationManager.advancedDelegate = self
-        //self.locationManager.startMonitoringVisits()
-        let visitFilter = LKVisitFilter(venueCategory: "Grocery")
-        self.locationManager.startMonitoringVisitsWithFilter(visitFilter)
-        
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))
                 
         return true
     }
     
-    func locationManager(manager: LKLocationManager, didUpdateLocations locations: [CLLocation]) {
-        for location in locations {
-            print("You are currently at: \(location)")
-            let localNotification = UILocalNotification()
-            localNotification.alertBody = "\(location)"
-            localNotification.timeZone = NSTimeZone.localTimeZone()
-            localNotification.fireDate = NSDate()
-            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-        }
-    }
-    
-    func locationManager(manager: LKLocationManager, didStartVisit visit: LKVisit) {
-        // Print out the street number and street name of the place where this
-        // visit started
-        print("Started visit at \(visit.place.subThoroughfare), \(visit.place.thoroughfare)")
-        
-        let locationItem = LocationItem(visit: visit)
-        let localNotification = UILocalNotification()
-        localNotification.alertBody = "Visit started at \(locationItem.title)"
-        localNotification.timeZone = NSTimeZone.localTimeZone()
-        localNotification.fireDate = NSDate()
-        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-        
-        
-        let myAlert = UIAlertView()
-        myAlert.title = "Visit started "
-        myAlert.message = "\(locationItem.title)"
-        myAlert.addButtonWithTitle("Ok")
-        myAlert.delegate = self
-        myAlert.show()
-        
-        
-    }
-    
-    func locationManager(manager: LKLocationManager, didEndVisit visit: LKVisit) {
-        // Print out the street number and street name of the place where this
-        // visit started
-        print("Ended visit at \(visit.place.subThoroughfare), \(visit.place.thoroughfare)")
-    }
-
     
     
 
